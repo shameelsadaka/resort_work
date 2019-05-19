@@ -21,26 +21,18 @@
     navbarFixed();
     
     function testimonialSlider(){
-        if ( $('.testimonial_slider').length ){
-            $('.testimonial_slider').owlCarousel({
-                loop:true,
-                margin: 30,
-                items: 2,
-                nav:false,
-                autoplay: true,
-                dots: true,
-                smartSpeed: 1500,
-                responsiveClass: true,
-                responsive: {
-                    0: {
-                        items: 1,
-                    },
-                    768: {
-                        items: 2,
-                    },
-                }
-            })
+        if ( $("#testimonial-slider").length ){
+            $("#testimonial-slider").owlCarousel({
+                items:1,
+                itemsDesktop:[1000,1],
+                itemsDesktopSmall:[979,1],
+                itemsTablet:[768,1],
+                pagination:true,
+                transitionStyle:"backSlide",
+                autoPlay:true
+            });
         }
+        
     }
     testimonialSlider();
     

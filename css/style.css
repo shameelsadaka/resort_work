@@ -921,7 +921,7 @@ button:focus {
 /*----------------------------------------------------*/
 /*============ testimonial_area css ============*/
 .testimonial_area {
-  background: #f9f9ff;
+  background: #EAEAEA;
 }
 
 .testimonial_slider .testimonial_item {
@@ -976,7 +976,7 @@ button:focus {
 }
 
 .testimonial_slider .owl-dots .owl-dot.active {
-  background: #f3c300;
+  background: #=#22cea7;
 }
 
 /*---------------------------------------------------- */
@@ -3602,3 +3602,52 @@ h1, h2, h3, h4, h5, h6 {
 /*---------------------------------------------------- */
 
 /*# sourceMappingURL=style.css.map */
+
+
+
+
+.testimonial{
+    padding: 35px 50px;
+    margin: 0 20px 30px;
+    text-align: center;
+}
+.testimonial .pic{
+    display: inline-block;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+.testimonial .pic img{
+    width: 100%;
+    height: auto;
+}
+.testimonial .title{
+    display: block;
+    margin: 0 0 7px 0;
+    font-size: 20px;
+    font-weight: 600;
+    color: #22cea7;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+.testimonial .post{
+    display: block;
+    font-size: 15px;
+    color: #222222;
+    text-transform: capitalize;
+    margin-bottom: 20px;
+}
+.testimonial .description{
+    font-size: 16px;
+    color: #222222;
+    line-height: 30px;
+}
+.owl-theme .owl-controls{ margin-top: 0; }
+.owl-theme .owl-controls .owl-page span{
+    background: #222222;
+    opacity: 0.8;
+    transition: all 0.3s ease 0s;
+}
+.owl-theme .owl-controls .owl-page.active span{ background: #22cea7; }
