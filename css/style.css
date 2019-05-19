@@ -777,13 +777,16 @@ button:focus {
 .accomodation_item .hotel_img .theme_btn {
   position: absolute;
   bottom: 20px;
+  background: rgba(0,0,0,0.6);
   left: 50%;
   -webkit-transform: translate(-50%);
   -ms-transform: translate(-50%);
   transform: translate(-50%);
   padding: 5px 25px;
   max-width: 128px;
+  
 }
+
 
 .accomodation_item .hotel_img:hover img {
   -webkit-transform: scale(1.19);
@@ -792,16 +795,21 @@ button:focus {
 }
 
 .accomodation_item h5 {
-  font-size: 24px;
-  line-height: 28px;
-  color: #52c5fd;
+  font-size: 14px;
+  color: #444444;
   font-weight: 600;
+  position:absolute;
+  background: #ffbe00;
+  top:-15px;
+  right:30px;
+  padding: 5px 12px;
+  border-radius:5px;
   margin-bottom: 0px;
 }
 
 .accomodation_item h5 small {
   font-weight: 300;
-  font-size: 14px;
+  font-size: 10px;
 }
 
 .sec_h4 {
