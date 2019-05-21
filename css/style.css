@@ -329,7 +329,7 @@ button:focus {
 }
 
 .navbar {
-  background: #fff;
+  background: #000;
   padding: 0px 25px;
 }
 
@@ -339,7 +339,7 @@ button:focus {
 
 .navbar .menu_nav .nav-item .nav-link {
   font: 500 12px/80px "Poppins", sans-serif;
-  color: #222222;
+  color: #fff;
   text-transform: uppercase;
   padding: 0px;
 }
@@ -408,7 +408,7 @@ button:focus {
   margin-right: 0px;
   border-bottom: 1px solid #ededed;
   margin-left: 0px;
-  background: #fff;
+  background: #000;
   -webkit-transition: all 0.4s linear;
   -o-transition: all 0.4s linear;
   transition: all 0.4s linear;
@@ -467,7 +467,7 @@ button:focus {
   position: fixed;
   width: 100%;
   left: 0;
-  background: #fff;
+  background: #000;
   top: 0;
   top: -50px;
   -webkit-transform: translateY(50px);
