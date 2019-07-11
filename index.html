@@ -18,6 +18,7 @@
         <link rel="stylesheet" href="vendors/bootstrap-datepicker/bootstrap-datetimepicker.min.css">
         <link rel="stylesheet" href="vendors/nice-select/css/nice-select.css">
         <link rel="stylesheet" href="vendors/owl-carousel/owl.carousel.min.css">
+        <link rel="stylesheet" href="css/bootstrap-datepicker3.standalone.min.css">
         <!-- main css -->
         <link rel="stylesheet" href="css/style.css">
         <link rel="stylesheet" href="css/responsive.css">
@@ -67,7 +68,9 @@
                         <h6>Away from monotonous life</h6>
                         <h1>Experience the Rainland</h1>
                         <p>“We are what we repeatedly do. Excellence then, is not a single act, but a habit.”</p>
-                        <a href="#about_content" class="btn btn-lg theme_btn button_hover">Get Started</a>
+                        <a href="#about_content" class="btn btn-lg theme_btn button_hover">Get Started</a> &nbsp; &nbsp;
+                        <a class="btn btn-lg theme_btn button_hover" data-toggle="modal" data-target="#roomBookModal">BOOK ROOM</a>
+
                     </div>
                 </div>
             </div>
@@ -170,51 +173,46 @@
                 </div>
                 <div class="row mb_30">
                     <div class="col-lg-3 col-sm-6">
-                        <div class="accomodation_item text-center">
+                        <div class="accomodation_item text-center" data-room-type="premium-exicutive">
                             <div class="hotel_img">
                                 <img src="image/gallery/35.jpg" height="270px" alt="room_img3">
                             </div>
-                            <a href="#"><h4 class="sec_h4">PREMIUM EXECUTIVE ROOM</h4></a>
-                            <h5>₹3800<small>/day</small></h5>
+                            <h4 class="sec_h4">PREMIUM EXECUTIVE ROOM</h4>
+                            <h5>₹<span class="room_rate">3800</span><small>/day</small></h5>
+                            <button class="book_room theme_btn" data-toggle="modal" data-target="#roomBookModal">BOOK NOW</button>
                         </div>
                     </div>
                     <div class="col-lg-3 col-sm-6">
-                        <div class="accomodation_item text-center">
+                        <div class="accomodation_item text-center" data-room-type="exicutive">
                             <div class="hotel_img">
                                 <img src="image/rooms/9.jpg"  height="270px" alt="room_img2">
                             </div>
-                            <a href="#"><h4 class="sec_h4">EXECUTIVE ROOM</h4></a>
-                            <h5>₹3600<small>/day</small></h5>
+                            <h4 class="sec_h4">EXECUTIVE ROOM</h4>
+                            <h5>₹<span class="room_rate">3600</span><small>/day</small></h5>
+                            <button class="book_room theme_btn" data-toggle="modal" data-target="#roomBookModal">BOOK NOW</button>
                         </div>
                     </div>
                     <div class="col-lg-3 col-sm-6">
-                        <div class="accomodation_item text-center">
+                        <div class="accomodation_item text-center" data-room-type="super-delux">
                             <div class="hotel_img">
                                 <img src="image/rooms/10.jpg" height="270px" alt="room_img1">
                             </div>
-                            <a href="#"><h4 class="sec_h4">SUPER DELUXE ROOM</h4></a>
-                            <h5>₹3200<small>/day</small></h5>
+                            <h4 class="sec_h4">SUPER DELUXE ROOM</h4>
+                            <h5>₹<span class="room_rate">3200</span><small>/day</small></h5>
+                            <button class="book_room theme_btn" data-toggle="modal" data-target="#roomBookModal">BOOK NOW</button>
                         </div>
                     </div>
                     
                     <div class="col-lg-3 col-sm-6">
-                        <div class="accomodation_item text-center">
+                        <div class="accomodation_item text-center" data-room-type="delux">
                             <div class="hotel_img">
                                 <img src="image/rooms/3.jpg" height="270px" alt="room_img1">
                             </div>
-                            <a href="#"><h4 class="sec_h4"> DELUXE ROOM</h4></a>
-                            <h5>₹2800<small>/day</small></h5>
+                            <h4 class="sec_h4">DELUXE ROOM</h4>
+                            <h5>₹<span class="room_rate">2800</span><small>/day</small></h5>
+                            <button class="book_room theme_btn" data-toggle="modal" data-target="#roomBookModal">BOOK NOW</button>
                         </div>
                     </div>
-                    <!--                     <div class="col-lg-3 col-sm-6">
-                        <div class="accomodation_item text-center">
-                            <div class="hotel_img">
-                                <img src="image/rooms/5.jpg" height="270px" alt="room_img4">
-                            </div>
-                            <a href="#"><h4 class="sec_h4">EXTRA BED</h4></a>
-                            <h5>₹600<small>/day</small></h5>
-                        </div>
-                    </div> -->
                 </div>
             </div>
         </section>
@@ -283,6 +281,7 @@
         <!--================ Testimonial Area  =================-->
         
         
+
         <!--================ start footer Area  =================-->
         <footer class="footer-area section_gap">
             <div class="container">
@@ -345,7 +344,75 @@
         </footer>
         <!--================ End footer Area  =================-->
         
-        
+        <!-- Room Book Modal -->
+        <div class="modal fade" id="roomBookModal" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Book Room Online</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <form id="roomBookForm">
+                        <div class="modal-body">
+
+                            <div class="alert alert-danger" style="display: none;"  role="alert">
+                                <h4 class="alert-heading">Booking faild!</h4>
+                                Some error occured. Please try again.
+                            </div>
+
+                            <div class="form-group">
+                                <label for="customer-name" class="col-form-label">Your Name</label>
+                                <input type="text" class="form-control" id="customer-name" name="customer-name" >
+                            </div>
+                            <div class="form-group">
+                                <label for="customer-email" class="col-form-label">Email Address</label>
+                                <input type="text" class="form-control" id="customer-email" name="customer-email" >
+                            </div>
+                            <div class="form-group">
+                                <label for="customer-phone" class="col-form-label">Phone Number</label>
+                                <input type="text" class="form-control" id="customer-phone" name="customer-phone" >
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="person-count" class="col-form-label">Number of Persons</label>
+                                        <input type="text" class="form-control" id="person-count" name="person-count" >
+                                    </div>            
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="form-group">
+                                        <label for="date-start" class="col-form-label">Joining  & Vacating Dates</label>
+                                        <div class="input-group input-daterange">
+                                            <input type="text" class="form-control" id="date-start" name="date-start">
+                                            <div class="input-group-addon">&nbsp;&nbsp;to&nbsp;&nbsp;</div>
+                                            <input type="text" class="form-control" id="date-end" name="date-end" >
+                                        </div>
+                                    </div>            
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-primary">Send message</button>
+                        </div>
+                    </form>
+                    <div class="result">
+                        <div class="modal-body">
+                            <span class="lds-dual-ring loader" style="display: none;"></span>
+                            <div class="alert alert-success" style="display: none;" role="alert">
+                                <h4 class="alert-heading">Mail Sent!</h4>
+                                We had recieved your room book request mail. We will call you to confirm the details!
+                                <hr>
+                                <p class="mb-0"><strong>Disclaimer</strong> : Your booking will be confirmed only after a successfull confirmation call</p>                              
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+    
         <!-- Global site tag (gtag.js) - Google Analytics -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=UA-102289409-3"></script>
         <script>
@@ -367,6 +434,87 @@
         <script src="js/mail-script.js"></script>
         <script src="js/stellar.js"></script>
         <script src="vendors/lightbox/simpleLightbox.min.js"></script>
+        <script src="js/bootstrap-datepicker.min.js"></script>
+        <script src="js/jquery.validate.min.js"></script>
         <script src="js/custom.js"></script>
+        <script>
+            $(document).ready(function(){
+
+                $('.input-daterange').datepicker({
+                    format:"dd/mm/yyyy",
+                    startDate:"+0d"
+                });
+
+                $('#roomBookForm').validate({
+                    rules : {
+                        'customer-name' : {
+                            required: true,
+                        },
+                        'customer-email' : {
+                            required: true,
+                            email : true
+                        },
+                        'customer-phone' : {
+                            required: true,
+                            minlength:6,
+                        },
+                        'person-count' : {
+                            required: true,
+                            range: [0, 100]
+                        },
+                        'date-start' : {
+                            required: true,
+                        },
+                        'date-end' : {
+                            required: true,
+                        },
+                    },
+                    onfocusout: function(element) {
+                        $(element).valid();
+                    },
+                    submitHandler: function(form) {
+                        $form = $(form); 
+                        $loader = $(".result .loader");      
+                        $success = $(".result .alert-success");
+                        
+                        $loader.show();
+                        $form.hide();
+                        var jqxhr = $.post( "api/confirm_booking.php", $form.serialize(), function(result) {
+                            if(result == 'success'){
+                                $success.show();                  
+                            }
+                            else{
+                                console.log(result);
+                                $form.show();
+                                $form.find(".alert-danger").show();
+                            }
+                        })
+                        .fail(function() {
+                            $form.show();
+                            $form.find(".alert-danger").slideDown();
+                        })
+                        .always(function() {
+                            $loader.hide();
+                        });
+                    }
+
+                });
+                
+                jQuery.extend(jQuery.validator.messages, {
+                    required: "",
+                    remote: "",
+                    email: "",
+                    url: "",
+                    date: "",
+                    dateISO: "",
+                    number: "",
+                    digits: "",
+                    creditcard: "",
+                    equalTo: ""
+                });
+                
+                
+            });
+        </script>
     </body>
 </html>                

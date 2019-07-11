@@ -555,6 +555,43 @@ button:focus {
 }
 
 /*============= End banner_area css =============*/
+label.error {
+  display: block;
+  color: #c70000;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size:12px;
+}
+input.error {
+  border: 1px solid #c70000;
+}
+.lds-dual-ring {
+  display: block;
+  width: 30px;
+  height: 30px;
+  margin: 100px auto;
+}
+.lds-dual-ring:after {
+  content: " ";
+  display: block;
+  width: 30px;
+  height: 30px;
+  margin: 1px;
+  border-radius: 50%;
+  border: 5px solid #333333;
+  border-color: #333333 transparent #333333 transparent;
+  animation: lds-dual-ring 1.2s linear infinite;
+}
+@keyframes lds-dual-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+
 .hotel_booking_table {
   background: #04091e;
   -webkit-box-align: center;
@@ -818,6 +855,13 @@ button:focus {
   font-weight: 600;
   color: #222222;
   margin-bottom: 0px;
+}
+
+
+.accomodation_item .book_room{
+  border:none;
+  font-size:13px;
+  padding: 4px 16px;  
 }
 
 .accomodation_two {
