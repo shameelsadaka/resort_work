@@ -70,7 +70,6 @@ error_reporting(E_ERROR | E_PARSE);
             mail($custoemr_mail['email'],$custoemr_mail['subject'],$custoemr_mail['message'],implode("\r\n", $headers));
 
 
-            // echo $admin_mail['message']. "<br/>" .$custoemr_mail['message'];
             echo 'success';
         }
         else{
