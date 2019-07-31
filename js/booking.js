@@ -59,19 +59,6 @@ $(document).ready(function(){
         }
 
     });
-    
-    jQuery.extend(jQuery.validator.messages, {
-        required: "",
-        remote: "",
-        email: "",
-        url: "",
-        date: "",
-        dateISO: "",
-        number: "",
-        digits: "",
-        creditcard: "",
-        equalTo: ""
-    });
-    
+        
     
 });
