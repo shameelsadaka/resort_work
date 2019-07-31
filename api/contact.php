@@ -22,18 +22,18 @@ error_reporting(E_ERROR | E_PARSE);
         ){
             
             $admin_mail = [
-                "email"=>$_POST['email'],
+                "email"=>ADMIN_MAIL,
                 "subject"=>"Message from Rainland Resort Website User",//Subject
                 "message"=>
                 "Hi Admin, <br/><br/>".
                 "There is a message from <b>".$_POST['name']."</b> through rainlandresortathirappilly.com ,<br/>".
                 "The details are shown below.<br/><br/>".
 
-                "Username : ".$_POST['name']."<br/>".
-                "Email : ".$_POST['email']."<br/>".
-                "Mobile : ".$_POST['mobile']."<br/><br/>".
-                "Subject : ".$_POST['subject']."<br/>".
-                "Message : <br/> <p>".$_POST['message']."</i><br/>".
+                "<b>Sender</b> : ".$_POST['name']."<br/>".
+                "<b>Email</b> : ".$_POST['email']."<br/>".
+                "<b>Mobile</b> : ".$_POST['mobile']."<br/><br/>".
+                "<b>Subject</b> : ".$_POST['subject']."<br/>".
+                "<b>Message</b> : <br/> <p>".$_POST['message']."</i><br/>".
 
 
                 "<br/><br/>Request Timestamp : ".date("r")
