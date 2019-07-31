@@ -6,9 +6,9 @@ error_reporting(E_ERROR | E_PARSE);
         return ucwords(str_replace("-"," ",$string));
     }
     function getTableFromArray($my_array){
+        $ret = "";
         foreach ($my_array as $key=>$value){
-            $ret .= _w($key)." : ".$value;
-            $ret .= '<br/>';
+            $ret .= _w($key)." : ".$value."\n";
         }
         return $ret;
     }
