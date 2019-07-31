@@ -1,15 +1,25 @@
 <?php
 require("config_mail.php");
 
+$headers[] = 'MIME-Version: 1.0';
+$headers[] = 'Content-type: text/html; charset=iso-8859-1';
+$headers[] = 'From: Rainland Resort Athirappilly <'.ADMIN_MAIL.'>';
+
+
 error_reporting(E_ERROR | E_PARSE);
     function _w($string){
         return ucwords(str_replace("-"," ",$string));
     }
     function getTableFromArray($my_array){
-        $ret = "";
-        foreach ($my_array as $key=>$value){
-            $ret .= _w($key)." : ".$value."\n";
-        }
+        $ret =  '<table border="1">';
+        $ret .= '  <tbody>';
+            foreach ($my_array as $key=>$value){
+                $ret .= '<tr>';
+                $ret .= "<td>"._w($key)."</td><td>$value</td>";
+                $ret .= '</tr>';
+            }
+        $ret .= '  </tbody>';
+        $ret .= '</table>';
         return $ret;
     }
     try {
@@ -30,15 +40,15 @@ error_reporting(E_ERROR | E_PARSE);
                 "subject"=>"New Room Booking at Rainland by ".$_POST['customer-name'],//Subject
 
                     "message"=>
-                    "Hi Admin, \n".
-                    "There is a new room booking request from ".$_POST['customer-name']." ,\n".
-                    "The form submitted is given below.\n".
+                    "Hi Admin, <br/><br/>".
+                    "There is a new room booking request from ".$_POST['customer-name']." ,<br/>".
+                    "The form submitted is given below.<br/>".
                     getTableFromArray($_POST).
 
-                    "\n\nRequest Timestamp : ".date("r")
+                    "<br/><br/>Request Timestamp : ".date("r")
             ];
 
-            mail($admin_mail['email'],$admin_mail['subject'],$admin_mail['message']);
+            mail($admin_mail['email'],$admin_mail['subject'],$admin_mail['message'],implode("\r<br/>", $headers));
         
 
             // Custoemr Message
@@ -46,19 +56,19 @@ error_reporting(E_ERROR | E_PARSE);
                 "email"=>$_POST['customer-email'],//Custoemr Email
                 "subject"=>"Rainland Resort - Room Booking request is Recieved",//Subject
                 "message"=>
-                        "Hi ".$_POST['customer-name'].",\n".
-                        "Thanks for booking rooms at Rainland Resort Athirappally. \n".
-                        "Your request is recieved, and we will call you soon for the confirmation.\n".
+                        "Hi ".$_POST['customer-name'].",<br/>".
+                        "Thanks for booking rooms at Rainland Resort Athirappally. <br/>".
+                        "Your request is recieved, and we will call you soon for the confirmation.<br/>".
 
-                        "Following are the details submitted by you,\n".
+                        "Following are the details submitted by you,<br/>".
                          
                         getTableFromArray($_POST).
 
 
-                        "Regards,\n".
-                        "Manager - Rainland Resort Athirappally\n"
+                        "Regards,<br/>".
+                        "Manager - Rainland Resort Athirappally<br/>"
             ];
-            mail($custoemr_mail['email'],$custoemr_mail['subject'],$custoemr_mail['message']);
+            mail($custoemr_mail['email'],$custoemr_mail['subject'],$custoemr_mail['message'],$headers);
 
 
             // echo $admin_mail['message']. "<br/>" .$custoemr_mail['message'];
