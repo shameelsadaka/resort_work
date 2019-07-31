@@ -1,5 +1,4 @@
-<?php
-    define("ADMIN_MAIL","shameelsadaka@gmail.com");
-    define("ADMIN_SENDER_MAIL","shameelsadaka@gmail.com");
-
-?>
+<?php                                                                                                                      <?php
+    define("ADMIN_MAIL","rainlandathirapilly@gmail.com");
+    define("ADMIN_SENDER_MAIL","admin@rainlandathirappilly.com");
+?> 
