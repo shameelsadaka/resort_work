@@ -48,7 +48,7 @@ error_reporting(E_ERROR | E_PARSE);
                     "<br/><br/>Request Timestamp : ".date("r")
             ];
 
-            mail($admin_mail['email'],$admin_mail['subject'],$admin_mail['message'],implode("\r<br/>", $headers));
+            mail($admin_mail['email'],$admin_mail['subject'],$admin_mail['message'],implode("\r\n", $headers));
         
 
             // Custoemr Message
@@ -68,7 +68,7 @@ error_reporting(E_ERROR | E_PARSE);
                         "Regards,<br/>".
                         "Manager - Rainland Resort Athirappally<br/>"
             ];
-            mail($custoemr_mail['email'],$custoemr_mail['subject'],$custoemr_mail['message'],$headers);
+            mail($custoemr_mail['email'],$custoemr_mail['subject'],$custoemr_mail['message'],implode("\r\n", $headers));
 
 
             // echo $admin_mail['message']. "<br/>" .$custoemr_mail['message'];
