@@ -55,15 +55,15 @@ error_reporting(E_ERROR | E_PARSE);
                 "email"=>$_POST['customer-email'],//Custoemr Email
                 "subject"=>"Rainland Resort - Room Booking request is Recieved",//Subject
                 "message"=>
-                        "Hi ".$_POST['customer-name'].",<br/>".
+                        "Hi ".$_POST['customer-name'].",<br/><br/>".
                         "Thanks for booking rooms at Rainland Resort Athirappally. <br/>".
                         "Your request is recieved, and we will call you soon for the confirmation.<br/>".
 
-                        "Following are the details submitted by you,<br/>".
+                        "Following are the details submitted by you,<br/><br/>".
                          
                         getTableFromArray($_POST).
 
-
+                        "<br/><br/>".
                         "Regards,<br/>".
                         "Manager - Rainland Resort Athirappally<br/>"
             ];
